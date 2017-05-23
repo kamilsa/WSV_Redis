@@ -11,7 +11,7 @@ namespace wsv{
 
 class WSVRedis : public WSV{
  public:
-  WSVRedis(std::string &host, size_t port) : host_(host), port_(port){
+  WSVRedis(std::string host, size_t port) : host_(host), port_(port){
     client_.connect(host_, port_);
   }
   ~WSVRedis();
