@@ -38,11 +38,11 @@ set(WSV_SRC
 
 # Library.
 set(LIBWSV_NAME wsv)
-add_library(${LIBWSV_NAME} SHARED
+add_library(${LIBWSV_NAME} STATIC
         ${WSV_INCLUDE}
         ${WSV_SRC}
         )
-add_subdirectory(cpp_redis)
+#add_subdirectory(cpp_redis)
 target_link_libraries(${LIBWSV_NAME}
         cpp_redis
         )
