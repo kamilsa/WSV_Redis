@@ -16,9 +16,14 @@ class WSVRedis : public WSV{
   }
   ~WSVRedis();
 
+  bool add_account(uint64_t account_id, std::string name);
+  bool add_balance(uint64_t account_id, std::uint64_t amount);
+
+
   std::string get_account_by_id(uint64_t account_id);
-  std::string get_country_by_account_id(uint64_t account_id);
   uint64_t get_balance_by_account_id(uint64_t account_id);
+  void flush_all();
+
 
  private:
   cpp_redis::redis_client client_;
